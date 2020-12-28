@@ -1,38 +1,30 @@
 #include <iostream>
 
-using namespace std;
-
 int main() {
-	int n1, n2, res;
-	char opc;
+
+    int n1, n2, nota;
+    std::string res;
+    char opc;
 
     inicio:
-	
-	system("cls");
+    
+    std::cout << "Digite a primeira nota: ";
+    std::cin >> n1;
+    std::cout << "Digite a segunda nota: ";
+    std::cin >> n2;
 
-	cout << "digite o valor da nota 1: ";
-	cin >> n1;
-	cout << "digite o valor da nota 2: ";
-	cin >> n2;
+    nota = n1 + n2;
+    
+    (nota >= 60) ? res = "Aprovado" : res = "Reprovado";
 
-	res = n1 + n2;
+    std::cout << "\Situaao do aluno: " << res << "\n";
 
-	if (res >= 60) {
-		cout << "\nAluno aprovado\n";
-	}
-	else if (res >= 40) {
-		cout << "\nAluno em recuperacao\n";
-	}
-	else {
-		cout << "\nAluno reprovado\n";
-	}
+    std::cout << "\nDigitar outras notas?[s/n]: ";
+    std::cin >> opc;
 
-	cout << "\nDigitar outras notas?[s/n]: ";
-	cin >> opc;
-	
-	if (opc == 's' or opc == 'S') {
-		goto inicio;
-	}
+    if (opc == 's' || opc == 'S') {
+        goto inicio;
+    }
 
-		return 0;
+    return 0;
 }
